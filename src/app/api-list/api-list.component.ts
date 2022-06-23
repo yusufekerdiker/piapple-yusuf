@@ -8,33 +8,37 @@ import { AxiosService } from "../service/Axios.service";
 })
 export class ApiListComponent implements OnInit {
 
-
-  constructor(private axiosService: AxiosService) { }
+  userNameList:any;
+  constructor(private axiosService: AxiosService) { 
+    axiosService.AxiosService().subscribe((data)=>{
+      this.userNameList=data;
+      console.log(this.userNameList);
+    })
+  }
 
   ngOnInit(): void {
     // this.axiosService.leer();
-    this.axiosService.getUserData().subscribe(data => {
-      console.log(data);
+    // this.axiosService.getUserData().subscribe(data => {
+    //   console.log(data);
 
-      const json = JSON.stringify(data)
-
-
-      let app = document.querySelector('.app') as HTMLInputElement;
+    //   const json = JSON.stringify(data)
 
 
-      var newArr = data.map(function(val:string){
- 
-        app.innerHTML = `
-        <p>${val}</p>
-      `;
-      })
-      newArr()
+    //   let app = document.querySelector('.app') as HTMLInputElement;
 
-      formJson() {
-        id: json.id
-        name: json.name
-        surname: json.
-      }
+
+    //   var newArr = data.map(function(val:string){
+    //     app.innerHTML = `
+    //     <p>${val}</p>
+    //   `;
+    //   })
+    //   newArr()
+
+      // formJson() {
+      //   id: json.id
+      //   name: json.name
+      //   surname: json.
+      // }
 
       // this.json.map(item => {
 
@@ -43,8 +47,7 @@ export class ApiListComponent implements OnInit {
       // `;
       // })
 
- 
-    })
+    // })
   }
 
 }
