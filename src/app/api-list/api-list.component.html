@@ -4,3 +4,23 @@
     </select>
     <label class="input-group-text" for="inputGroupSelect03">Options</label>
 </div>
+
+<div class="input-group mb-3">
+  <select class="form-select" id="inputGroupSelect03" aria-label="Example select with button addon" *ngFor="let num of numSequence(4)">
+    <option *ngFor="let item of userNameList">{{item.user_name}}</option>
+  </select>
+  <label class="input-group-text" for="inputGroupSelect03">Options</label>
+</div>
+
+<div class="input-group mb-3">
+<select class="form-select" id="inputGroupSelect03" aria-label="Example select with button addon" *ngFor="let num of numSequence(4)">
+  <option *ngFor="let item of addressList">{{item.city[2]}}</option>
+</select>
+<label class="input-group-text" for="inputGroupSelect03">Options</label>
+</div>
+
+<button style="margin: 10px;" type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+<span *ngFor="num of numSequence(4)">
+  <p *ngFor="let item of addressList">{{item.city}}</p>
+</span>
+</button>

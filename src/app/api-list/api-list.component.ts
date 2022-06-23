@@ -9,11 +9,39 @@ import { AxiosService } from "../service/Axios.service";
 export class ApiListComponent implements OnInit {
 
   userNameList:any;
+  menuList:any;
+  addressList:any;
+  categoryList:any;
+  restaurantList:any;
+
   constructor(private axiosService: AxiosService) { 
-    axiosService.AxiosService().subscribe((data)=>{
+    
+
+    axiosService.AxiosServiceUser().subscribe((data)=>{
       this.userNameList=data;
       console.log(this.userNameList);
     })
+
+    axiosService.AxiosServiceMenu().subscribe((data)=>{
+      this.menuList=data;
+      console.log(this.addressList);
+    })
+
+    axiosService.AxiosServiceAddress().subscribe((data)=>{
+      this.addressList=data;
+      console.log(this.addressList);
+    })
+
+    axiosService.AxiosServiceCategory().subscribe((data)=>{
+      this.categoryList=data;
+      console.log(this.categoryList);
+    })
+
+    axiosService.AxiosServiceRestaurant().subscribe((data)=>{
+      this.restaurantList=data;
+      console.log(this.restaurantList);
+    })
+
   }
 
   ngOnInit(): void {
@@ -48,6 +76,10 @@ export class ApiListComponent implements OnInit {
       // })
 
     // })
+  }
+
+  numSequence(n: number): Array<number> {
+    return Array(n);
   }
 
 }

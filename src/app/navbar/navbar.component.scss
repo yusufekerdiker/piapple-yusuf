@@ -224,18 +224,33 @@ ul {
 }
 .navbar-nav {
 	button {
-		padding: 1.2rem 0;
+		padding: 1.2rem;
+		margin-left: 1rem;
 	}
-	.btn {
-		background-color: $background-color_1;
-		color: $color_3;
-		border-radius: 5px;
-		padding: 1rem 1.5rem;
-		font-size: 1.2rem;
-		margin-top: -10px;
-		&:hover {
-			background-color: $background-color_2;
-			color: $color_2;
-		}
+	.btn-danger {
+		background: rgb(255, 123, 0);
+		color: #fff;
+		border: none;
 	}
+	.btn-danger:hover {
+		background: #fff;
+		color: rgb(255, 123, 0);
+		border: 1px solid rgb(255, 123, 0);
+	}
+	.btn-link {
+		text-decoration: none;
+		font-size: 16px;
+	}
+	// .btn {
+	// 	background-color: $background-color_1;
+	// 	color: $color_3;
+	// 	border-radius: 5px;
+	// 	padding: 1rem 1.5rem;
+	// 	font-size: 1.2rem;
+	// 	margin-top: -10px;
+	// 	&:hover {
+	// 		background-color: $background-color_2;
+	// 		color: $color_2;
+	// 	}
+	// }
 }
